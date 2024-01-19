@@ -1,5 +1,5 @@
 <template>
-  <div class="px-8">
+  <div class="px-8 mt-4">
     <v-row>
       <v-col cols="3">
         <v-text-field label="Tìm kiếm" append-inner-icon="mdi-magnify" density="compact" variant="outlined">
@@ -7,7 +7,7 @@
       </v-col>
       <v-spacer></v-spacer>
       <v-col cols="2" class="text-right">
-        <v-btn color="primary" prepend-icon="mdi-plus">Tạo mới</v-btn>
+        <v-btn color="#0F60FF" prepend-icon="mdi-plus" @click="dialog=true">Tạo mới</v-btn>
       </v-col>
     </v-row>
     <v-row>
@@ -33,85 +33,90 @@
         </v-card>
       </v-col>
     </v-row>
+    <dialog-user :dialog="dialog" @close="dialog=false"/>
   </div>
 </template>
 <script>
+import DialogUser from './DialogUser.vue';
+
 export default {
-  data() {
-    return {
-      headers: [
-        {
-          title: 'Avatar',
-          align: 'start',
-          sortable: false
-        },
-        { title: 'Tên người dùng' },
-        { title: 'Email' },
-        { title: 'Ngày sinh' },
-        { title: 'Số điện thoại' },
-        { title: 'Hành động' },
-      ],
-      items: [
-        {
-          name: 'Nguyễn Văn A',
-          email: 'nevaeh.simmons@example.com',
-          ngaysinh: '1989/04/06',
-          sdt: '063-222-1125'
-        },
-        {
-          name: 'Nguyễn Văn A',
-          email: 'nevaeh.simmons@example.com',
-          ngaysinh: '1989/04/06',
-          sdt: '063-222-1125'
-        },
-        {
-          name: 'Nguyễn Văn A',
-          email: 'nevaeh.simmons@example.com',
-          ngaysinh: '1989/04/06',
-          sdt: '063-222-1125'
-        },
-        {
-          name: 'Nguyễn Văn A',
-          email: 'nevaeh.simmons@example.com',
-          ngaysinh: '1989/04/06',
-          sdt: '063-222-1125'
-        },
-        {
-          name: 'Nguyễn Văn A',
-          email: 'nevaeh.simmons@example.com',
-          ngaysinh: '1989/04/06',
-          sdt: '063-222-1125'
-        },
-        {
-          name: 'Nguyễn Văn A',
-          email: 'nevaeh.simmons@example.com',
-          ngaysinh: '1989/04/06',
-          sdt: '063-222-1125'
-        },
-        {
-          name: 'Nguyễn Văn A',
-          email: 'nevaeh.simmons@example.com',
-          ngaysinh: '1989/04/06',
-          sdt: '063-222-1125'
-        },
-        {
-          name: 'Nguyễn Văn A',
-          email: 'nevaeh.simmons@example.com',
-          ngaysinh: '1989/04/06',
-          sdt: '063-222-1125'
-        }, {
-          name: 'Nguyễn Văn A',
-          email: 'nevaeh.simmons@example.com',
-          ngaysinh: '1989/04/06',
-          sdt: '063-222-1125'
-        }, {
-          name: 'Nguyễn Văn A',
-          email: 'nevaeh.simmons@example.com',
-          ngaysinh: '1989/04/06',
-          sdt: '063-222-1125'
-        }
-      ],
-    }
-  },
+    data() {
+        return {
+            dialog: false,
+            headers: [
+                {
+                    title: 'Avatar',
+                    align: 'start',
+                    sortable: false
+                },
+                { title: 'Tên người dùng' },
+                { title: 'Email' },
+                { title: 'Ngày sinh' },
+                { title: 'Số điện thoại' },
+                { title: 'Hành động' },
+            ],
+            items: [
+                {
+                    name: 'Nguyễn Văn A',
+                    email: 'nevaeh.simmons@example.com',
+                    ngaysinh: '1989/04/06',
+                    sdt: '063-222-1125'
+                },
+                {
+                    name: 'Nguyễn Văn A',
+                    email: 'nevaeh.simmons@example.com',
+                    ngaysinh: '1989/04/06',
+                    sdt: '063-222-1125'
+                },
+                {
+                    name: 'Nguyễn Văn A',
+                    email: 'nevaeh.simmons@example.com',
+                    ngaysinh: '1989/04/06',
+                    sdt: '063-222-1125'
+                },
+                {
+                    name: 'Nguyễn Văn A',
+                    email: 'nevaeh.simmons@example.com',
+                    ngaysinh: '1989/04/06',
+                    sdt: '063-222-1125'
+                },
+                {
+                    name: 'Nguyễn Văn A',
+                    email: 'nevaeh.simmons@example.com',
+                    ngaysinh: '1989/04/06',
+                    sdt: '063-222-1125'
+                },
+                {
+                    name: 'Nguyễn Văn A',
+                    email: 'nevaeh.simmons@example.com',
+                    ngaysinh: '1989/04/06',
+                    sdt: '063-222-1125'
+                },
+                {
+                    name: 'Nguyễn Văn A',
+                    email: 'nevaeh.simmons@example.com',
+                    ngaysinh: '1989/04/06',
+                    sdt: '063-222-1125'
+                },
+                {
+                    name: 'Nguyễn Văn A',
+                    email: 'nevaeh.simmons@example.com',
+                    ngaysinh: '1989/04/06',
+                    sdt: '063-222-1125'
+                }, {
+                    name: 'Nguyễn Văn A',
+                    email: 'nevaeh.simmons@example.com',
+                    ngaysinh: '1989/04/06',
+                    sdt: '063-222-1125'
+                }, {
+                    name: 'Nguyễn Văn A',
+                    email: 'nevaeh.simmons@example.com',
+                    ngaysinh: '1989/04/06',
+                    sdt: '063-222-1125'
+                }
+            ],
+        };
+    },
+    components: { DialogUser }
 }
 </script>

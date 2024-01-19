@@ -1,5 +1,5 @@
 <template>
-  <div class="px-8">
+  <div class="px-8 mt-4">
     <v-row>
       <v-col cols="3">
         <v-text-field label="Tìm kiếm" append-inner-icon="mdi-magnify" density="compact" variant="outlined">
@@ -7,7 +7,7 @@
       </v-col>
       <v-spacer></v-spacer>
       <v-col cols="2" class="text-right">
-        <v-btn color="primary" prepend-icon="mdi-plus">Tạo mới</v-btn>
+        <v-btn color="#0F60FF" prepend-icon="mdi-plus" @click="dialog=true">Tạo mới</v-btn>
       </v-col>
     </v-row>
     <v-row>
@@ -33,86 +33,91 @@
         </v-card>
       </v-col>
     </v-row>
+    <dialog-product :dialog="dialog" @close="dialog=false"/>
   </div>
 </template>
 
 <script>
+import DialogProduct from './DialogProduct.vue';
+
 export default {
-  name: 'ProductView',
-  data() {
-    return {
-      headers: [
-        {
-          title: 'Tên sản phẩm',
-        },
-        { title: 'Giá' },
-        { title: 'Số lượng' },
-        { title: 'Mô tả' },
-        { title: 'ảnh' },
-        { title: 'Hành động' },
-      ],
-      items: [
-        {
-          name: 'Sản phẩm 1',
-          price: '$6,00',
-          soluong: '10',
-          mota: 'Lorem ipsum dolor sit amet'
-        },
-        {
-          name: 'Sản phẩm 1',
-          price: '$6,00',
-          soluong: '10',
-          mota: 'Lorem ipsum dolor sit amet'
-        },
-        {
-          name: 'Sản phẩm 1',
-          price: '$6,00',
-          soluong: '10',
-          mota: 'Lorem ipsum dolor sit amet'
-        },
-        {
-          name: 'Sản phẩm 1',
-          price: '$6,00',
-          soluong: '10',
-          mota: 'Lorem ipsum dolor sit amet'
-        },
-        {
-          name: 'Sản phẩm 1',
-          price: '$6,00',
-          soluong: '10',
-          mota: 'Lorem ipsum dolor sit amet'
-        },
-        {
-          name: 'Sản phẩm 1',
-          price: '$6,00',
-          soluong: '10',
-          mota: 'Lorem ipsum dolor sit amet'
-        },
-        {
-          name: 'Sản phẩm 1',
-          price: '$6,00',
-          soluong: '10',
-          mota: 'Lorem ipsum dolor sit amet'
-        },
-        {
-          name: 'Sản phẩm 1',
-          price: '$6,00',
-          soluong: '10',
-          mota: 'Lorem ipsum dolor sit amet'
-        }, {
-          name: 'Sản phẩm 1',
-          price: '$6,00',
-          soluong: '10',
-          mota: 'Lorem ipsum dolor sit amet'
-        }, {
-          name: 'Sản phẩm 1',
-          price: '$6,00',
-          soluong: '10',
-          mota: 'Lorem ipsum dolor sit amet'
-        }
-      ],
-    }
-  },
+    name: 'ProductView',
+    data() {
+        return {
+            dialog: false,
+            headers: [
+                {
+                    title: 'Tên sản phẩm',
+                },
+                { title: 'Giá' },
+                { title: 'Số lượng' },
+                { title: 'Mô tả' },
+                { title: 'ảnh' },
+                { title: 'Hành động' },
+            ],
+            items: [
+                {
+                    name: 'Sản phẩm 1',
+                    price: '$6,00',
+                    soluong: '10',
+                    mota: 'Lorem ipsum dolor sit amet'
+                },
+                {
+                    name: 'Sản phẩm 1',
+                    price: '$6,00',
+                    soluong: '10',
+                    mota: 'Lorem ipsum dolor sit amet'
+                },
+                {
+                    name: 'Sản phẩm 1',
+                    price: '$6,00',
+                    soluong: '10',
+                    mota: 'Lorem ipsum dolor sit amet'
+                },
+                {
+                    name: 'Sản phẩm 1',
+                    price: '$6,00',
+                    soluong: '10',
+                    mota: 'Lorem ipsum dolor sit amet'
+                },
+                {
+                    name: 'Sản phẩm 1',
+                    price: '$6,00',
+                    soluong: '10',
+                    mota: 'Lorem ipsum dolor sit amet'
+                },
+                {
+                    name: 'Sản phẩm 1',
+                    price: '$6,00',
+                    soluong: '10',
+                    mota: 'Lorem ipsum dolor sit amet'
+                },
+                {
+                    name: 'Sản phẩm 1',
+                    price: '$6,00',
+                    soluong: '10',
+                    mota: 'Lorem ipsum dolor sit amet'
+                },
+                {
+                    name: 'Sản phẩm 1',
+                    price: '$6,00',
+                    soluong: '10',
+                    mota: 'Lorem ipsum dolor sit amet'
+                }, {
+                    name: 'Sản phẩm 1',
+                    price: '$6,00',
+                    soluong: '10',
+                    mota: 'Lorem ipsum dolor sit amet'
+                }, {
+                    name: 'Sản phẩm 1',
+                    price: '$6,00',
+                    soluong: '10',
+                    mota: 'Lorem ipsum dolor sit amet'
+                }
+            ],
+        };
+    },
+    components: { DialogProduct }
 }
 </script>
 
