@@ -10,7 +10,7 @@
                 <v-list-subheader class="text-uppercase ml-3">Quản lý sản phẩm</v-list-subheader>
                 <v-divider></v-divider>
                 <v-list-item v-for="(item, i) in items" :key="i" :value="item" :to="item.link" class="ma-2"
-                    style="border-radius: 10px;">
+                    style="border-radius: 10px;" @click="Action(item.title)">
                     <template v-slot:prepend>
                         <v-icon :icon="item.icon"></v-icon>
                     </template>
@@ -33,9 +33,14 @@ export default {
     data() {
         return {
             items: [
-                { text: 'Sản phẩm', icon: 'mdi-shape', link: '/admin/sanpham' },
-                { text: 'User', icon: 'mdi-account-supervisor-outline', link: '/admin/user' }
+                { text: 'Sản phẩm', icon: 'mdi-shape', link: '/admin/sanpham',title:'Danh sách sản phẩm' },
+                { text: 'User', icon: 'mdi-account-supervisor-outline', link: '/admin/user',title:'Danh sách người dùng' }
             ]
+        }
+    },
+    methods:{
+        Action(title){
+            this.$store.dispatch('Action', title);
         }
     }
 }

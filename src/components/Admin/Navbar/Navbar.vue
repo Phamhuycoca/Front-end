@@ -1,6 +1,6 @@
 <template>
     <v-app-bar :elevation="0" rounded scroll-behavior="elevate">
-        <v-app-bar-title class="font-weight-bold ma-8 text-h5">Danh sách sản phẩm</v-app-bar-title>
+        <v-app-bar-title class="font-weight-bold ma-8 text-h5">{{ $store.state.title }}</v-app-bar-title>
         <template v-slot:append>
             <v-badge content="6" color="red" class="ma-4">
                 <v-icon icon="mdi-bell-outline"></v-icon>
