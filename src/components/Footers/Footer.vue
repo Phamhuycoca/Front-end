@@ -1,11 +1,31 @@
 <template>
   <div>
     <v-row>
-        <v-col cols="12" v-for="n in 3" :key="n" sm="4">
+        <v-col cols="4">
             <v-card variant="tonal" height="170">
-                <v-card-title class="text-center mt-4"><v-icon color="#65B168" size="large">mdi-lightbulb-on-outline</v-icon></v-card-title>
-                <v-card-text class="text-center font-weight-bold" style="font-size:26px;">Clear & Usable user flows</v-card-text>
-                <v-card-item class="text-center">Let’s boost yout marketplace</v-card-item>
+                <v-card-title class="text-center mt-4">
+                  <v-img src="../../assets/icon/lightbulb-on-outline.png" height="50" class="ma-2"></v-img>
+                </v-card-title>
+                <v-card-text class="text-center font-weight-bold" style="font-size: 20px;">Clear & Usable user flows</v-card-text>
+                <p class="text-center" style="font-size: 14px;">Let’s boost yout marketplace</p>
+            </v-card>
+        </v-col>
+        <v-col cols="4">
+            <v-card variant="tonal" height="170">
+                <v-card-title class="text-center mt-4">
+                  <v-img src="../../assets/icon/auto-fix.png" height="50" class="ma-2"></v-img>
+                </v-card-title>
+                <v-card-text class="text-center font-weight-bold" style="font-size: 20px;">Fine & Styled components</v-card-text>
+                <p class="text-center" style="font-size: 14px;">Speed up with Setproduct templates</p>
+            </v-card>
+        </v-col>
+        <v-col cols="4">
+            <v-card variant="tonal" height="170" >
+                <v-card-title class="text-center mt-4">
+                  <v-img src="../../assets/icon/palette.png" max-height="50" class="ma-2"></v-img>
+                </v-card-title>
+                <v-card-text class="text-center font-weight-bold" style="font-size: 20px;">Customizable & Reusable</v-card-text>
+                <p class="text-center" style="font-size: 14px;">Take our UX patterns and rebuild</p>
             </v-card>
         </v-col>
     </v-row>

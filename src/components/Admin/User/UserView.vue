@@ -1,3 +1,10 @@
+<script setup lang="js">
+import DialogUser from './DialogUser.vue';
+import { ref } from 'vue';
+
+
+const dialog=ref(false);
+</script>
 <template>
   <div class="px-8 mt-4">
     <v-row>
@@ -80,18 +87,6 @@
         </v-card>
       </v-col>
     </v-row>
-    <dialog-user :dialog="dialog" @close="dialog=false"/>
+    <dialog-user v-model="dialog" @close="dialog=false"/>
   </div>
 </template>
-<script>
-import DialogUser from './DialogUser.vue';
-
-export default {
-    data() {
-        return {
-            dialog: false,
-        }
-    },
-    components: { DialogUser }
-}
-</script>

@@ -78,23 +78,15 @@
         </v-card>
       </v-col>
     </v-row>
-    <dialog-product :dialog="dialog" @close="dialog = false" />
+    <dialog-product v-model="dialog" @close="dialog = false" />
 
   </div>
 </template>
 
-<script>
+<script setup>
 import DialogProduct from './DialogProduct.vue';
-
-export default {
-  name: 'ProductView',
-  data() {
-    return {
-      dialog: false,
-    }
-  },
-  components: { DialogProduct }
-}
+import {ref} from 'vue'
+const dialog=ref(false);
 </script>
 
 <style></style>
