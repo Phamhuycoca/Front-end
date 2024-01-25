@@ -7,8 +7,8 @@ const terms = ref(false);
 
 const { errors, handleSubmit, validate, defineField } = useForm({
     validationSchema: yup.object({
-        email: yup.string().email().required(),
-        password: yup.string().min(6).required(),
+        email: yup.string().email('Email không đúng định dạng').required('Vui lòng nhập email'),
+        password: yup.string().min(6,'Mật khẩu phải trên 6 kí tự').required('Vui lòng nhập mật khẩu'),
     }),
 });
 const onSubmit = handleSubmit(async values => {

@@ -3,7 +3,7 @@ import DialogUser from './DialogUser.vue';
 import { ref } from 'vue';
 
 
-const dialog=ref(false);
+const dialog = ref(false);
 </script>
 <template>
   <div class="px-8 mt-4">
@@ -14,12 +14,12 @@ const dialog=ref(false);
       </v-col>
       <v-spacer></v-spacer>
       <v-col cols="2" class="text-right">
-        <v-btn color="#0F60FF" prepend-icon="mdi-plus" height="40" width="140" @click="dialog=true">Tạo mới</v-btn>
+        <v-btn color="#0F60FF" prepend-icon="mdi-plus" height="40" style="min-width: 140;" @click="dialog = true">Tạo mới</v-btn>
       </v-col>
     </v-row>
     <v-row>
       <v-col cols="12">
-        <v-card>
+        <v-card elevation="3" style="border-radius: 15px;">
           <v-row>
             <v-col cols="12">
               <v-card variant="text">
@@ -75,18 +75,25 @@ const dialog=ref(false);
               <v-row>
                 <p class="mt-5 opacity">Showing</p>
                 <v-col cols="2">
-                  <v-select density="compact" :items="['10', '20', '25', '30', 'All']" variant="outlined"></v-select>
+                  <v-select label="10" density="compact" :items="['10', '20', '25', '30', 'All']" variant="outlined"></v-select>
                 </v-col>
                 <p class="mt-5 opacity">of 50</p>
               </v-row>
             </v-col>
             <v-col cols="4" class="text-right">
-              <v-pagination variant="text" density="compact" :length="5"></v-pagination>
+              <!-- <v-pagination variant="text" density="compact" :length="5"></v-pagination> -->
+              <v-pagination active-color="#0F60FF" :length="4" variant="elevated" density="compact"></v-pagination>
             </v-col>
           </v-row>
         </v-card>
       </v-col>
     </v-row>
-    <dialog-user v-model="dialog" @close="dialog=false"/>
+    <dialog-user v-model="dialog" @close="dialog = false" />
   </div>
 </template>
+<style scoped>
+.v-pagination__prev{
+  margin: 1px !important;
+
+}
+</style>

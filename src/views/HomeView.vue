@@ -2,39 +2,43 @@
   <div>
     <div class="py-6 px-6">
       <v-row>
-        <v-col cols="6">
+        <v-col cols="12" sm="12" md="6" lg="2">
           <v-row>
-            <v-select class="ma-2" label="SORT BY" :items="['Useless first']" density="compact"  :style="{ width: '1%' }"
+            <v-select class="ma-2" label="SORT BY" :items="['Useless first']" density="compact"
               variant="outlined"></v-select>
-            <v-select class="ma-2" label="Condition" density="compact" variant="outlined" style="width: 5%;"></v-select>
-            <v-select class="ma-2" label="Delivery options" density="compact" variant="outlined"
-              style="width: 5%;"></v-select>
           </v-row>
         </v-col>
-
+        <v-col cols="12" sm="12" md="6" lg="2">
+          <v-row>
+            <v-select class="ma-2" label="Condition" density="compact" variant="outlined"></v-select>
+          </v-row>
+        </v-col>
+        <v-col cols="12" sm="12" md="6" lg="2">
+          <v-row>
+            <v-select class="ma-2" label="Delivery options" density="compact" variant="outlined"></v-select>
+          </v-row>
+        </v-col>
         <v-spacer></v-spacer>
 
-        <v-col cols="5">
+
+
+        <v-col cols="12" sm="12" md="6" lg="4">
           <v-row>
             <v-spacer></v-spacer>
-            <div class="mr-5">
-              <v-btn class="text-capitalize font-weight-regular mt-2" variant="text" size="large"
-                style="background-color: #EBF2FF;">Show
-                all</v-btn>
-              <v-btn class="text-capitalize font-weight-regular mt-2" elevation="2" size="large"
-                style="color: #2264D1;">Auction</v-btn>
-              <v-btn class="text-capitalize font-weight-regular mt-2" variant="text" size="large"
-                style="background-color: #EBF2FF;">But
-                now</v-btn>
-            </div>
-            <div class="ml-5">
-              <v-btn class="mt-2" variant="text" size="large" style="background-color: #EBF2FF;">
-                <v-icon>mdi-menu</v-icon>
-              </v-btn>
-              <v-btn class="mt-2" size="large">
-                <v-icon>mdi-microsoft-windows</v-icon>
-              </v-btn>
-            </div>
+            <v-btn class="text-capitalize font-weight-regular mt-2" variant="text" size="large"
+              style="background-color: #EBF2FF;">Show
+              all</v-btn>
+            <v-btn class="text-capitalize font-weight-regular mt-2" elevation="2" size="large"
+              style="color: #2264D1;">Auction</v-btn>
+            <v-btn class="text-capitalize font-weight-regular mt-2 mr-4" variant="text" size="large"
+              style="background-color: #EBF2FF;">But
+              now</v-btn>
+            <v-btn class="mt-2 ml-4" variant="text" size="large" style="background-color: #EBF2FF;">
+              <v-icon>mdi-menu</v-icon>
+            </v-btn>
+            <v-btn class="mt-2" size="large">
+              <v-icon>mdi-microsoft-windows</v-icon>
+            </v-btn>
           </v-row>
         </v-col>
       </v-row>
@@ -80,4 +84,5 @@ export default {
 * {
   font-family: 'Epilogue', sans-serif;
   font-family: 'Inter', sans-serif;
-}</style>
+}
+</style>

@@ -19,6 +19,9 @@
             </v-list>
         </v-navigation-drawer> 
         <NavbarView />
+        <v-main>
+            <router-view></router-view>
+        </v-main>
     </div>
 </template>
 <script>

@@ -12,7 +12,7 @@
     </v-row>
     <v-row>
       <v-col cols="12">
-        <v-card>
+        <v-card elevation="3" style="border-radius: 15px;">
           <v-row>
             <v-col cols="12">
               <v-card variant="text">
