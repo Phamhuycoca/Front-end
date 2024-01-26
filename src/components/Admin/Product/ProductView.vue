@@ -1,13 +1,13 @@
 <template>
   <div class="px-8 mt-4">
     <v-row>
-      <v-col cols="3">
+      <v-col cols="12" sm="6" md="6" lg="3">
         <v-text-field label="Tìm kiếm" append-inner-icon="mdi-magnify" density="compact" variant="outlined">
         </v-text-field>
       </v-col>
       <v-spacer></v-spacer>
-      <v-col cols="2" class="text-right">
-        <v-btn color="#0F60FF" prepend-icon="mdi-plus" height="40" width="140" @click="dialog = true">Tạo mới</v-btn>
+      <v-col cols="12" sm="12" md="4" lg="9" class="text-right">
+        <v-btn color="#0F60FF" prepend-icon="mdi-plus" height="40" width="130" @click="dialog = true">Tạo mới</v-btn>
       </v-col>
     </v-row>
     <v-row>
@@ -62,17 +62,17 @@
             </v-col>
           </v-row>
           <v-row class="ma-2">
-            <v-col cols="8">
+            <v-col cols="12" sm="2" md="6" lg="8">
               <v-row>
                 <p class="mt-5 opacity">Showing</p>
-                <v-col cols="2">
-                  <v-select density="compact" :items="['10', '20', '25', '30', 'All']" variant="outlined"></v-select>
+                <v-col cols="12" sm="4" lg="2">
+                  <v-select v-model="selectProduct" density="compact" :items="['10', '20', '25', '30', 'All']" variant="outlined"></v-select>
                 </v-col>
                 <p class="mt-5 opacity">of 50</p>
               </v-row>
             </v-col>
-            <v-col cols="4" class="text-right">
-              <v-pagination variant="text" density="compact" :length="5"></v-pagination>
+            <v-col cols="12" sm="12" md="6" lg="4" class="text-right">
+              <v-pagination active-color="#0F60FF" :length="4" variant="elevated" density="compact"></v-pagination>
             </v-col>
           </v-row>
         </v-card>
@@ -87,6 +87,7 @@
 import DialogProduct from './DialogProduct.vue';
 import {ref} from 'vue'
 const dialog=ref(false);
+const selectProduct=ref(10);
 </script>
 
 <style></style>

@@ -2,27 +2,29 @@
   <div>
     <div class="py-6 px-6">
       <v-row>
-        <v-col cols="12" sm="12" md="6" lg="2">
+        <v-col cols="6" sm="12" md="6" lg="2">
           <v-row>
-            <v-select class="ma-2" label="SORT BY" :items="['Useless first']" density="compact"
+            <v-select class="ma-2" label="SORT BY" :items="selectBy" v-model="selectedValue" density="compact"
               variant="outlined"></v-select>
           </v-row>
         </v-col>
-        <v-col cols="12" sm="12" md="6" lg="2">
+        <v-col cols="6" sm="12" md="6" lg="2">
           <v-row>
-            <v-select class="ma-2" label="Condition" density="compact" variant="outlined"></v-select>
+            <v-select class="ma-2" label="Condition" :items="selectStatus" v-model="status" item-value="value"
+              item-title="text" density="compact" variant="outlined"></v-select>
           </v-row>
         </v-col>
-        <v-col cols="12" sm="12" md="6" lg="2">
+        <v-col cols="6" sm="12" md="6" lg="2">
           <v-row>
-            <v-select class="ma-2" label="Delivery options" density="compact" variant="outlined"></v-select>
+            <v-select class="ma-2" label="Delivery options" :items="selectPrice" v-model="price" density="compact"
+              variant="outlined"></v-select>
           </v-row>
         </v-col>
         <v-spacer></v-spacer>
 
 
 
-        <v-col cols="12" sm="12" md="6" lg="4">
+        <v-col cols="12" sm="12" md="8" lg="6">
           <v-row>
             <v-spacer></v-spacer>
             <v-btn class="text-capitalize font-weight-regular mt-2" variant="text" size="large"
@@ -54,7 +56,7 @@
     </div>
 
     <div class="ma-4">
-      <CardItem />
+      <CardItem :selectedValue="selectedValue" :status="status" :price="price" />
     </div>
 
     <div class="ml-4 mr-4 mt-10 mb-10">
@@ -63,22 +65,27 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { reactive, ref, watch } from "vue"
 import CardItem from '@/components/Cards/CardItem.vue'
 import Footer from '@/components/Footers/Footer.vue'
-export default {
-  components: {
-    CardItem,
-    Footer
-  },
-  data() {
-    return {
-      chips: ['worldwide shipping', 'under $50', 'kitten', 'plastic plugs', 'pucker shoes', 'vintage typewriter']
-    }
-  }
-
-}
+const chips = reactive(['worldwide shipping', 'under $50', 'kitten', 'plastic plugs', 'pucker shoes', 'vintage typewriter'])
+const selectBy = reactive(['Tất cả', 'Giày', 'Quần', 'Áo'])
+const selectStatus = reactive([
+  { text: 'Tất cả', value: '' },
+  { text: 'Giảm 50%', value: 0 },
+  { text: 'Cool deal', value: 1 },
+])
+const selectPrice = reactive(['Tất cả', 'Từ thấp đến cao', 'Từ cao đến thấp']);
+const selectedValue = ref('')
+const status = ref('');
+const price = ref('');
+//console.log(status.value)
+// watch(() => status.value, (newValue) => {
+//   console.log(newValue);
+// });
 </script>
+
 
 <style scoped>
 * {

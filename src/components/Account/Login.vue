@@ -8,7 +8,12 @@ const terms = ref(false);
 const { errors, handleSubmit, validate, defineField } = useForm({
     validationSchema: yup.object({
         email: yup.string().email('Email không đúng định dạng').required('Vui lòng nhập email'),
-        password: yup.string().min(6,'Mật khẩu phải trên 6 kí tự').required('Vui lòng nhập mật khẩu'),
+        password: yup.string().min(6,'Mật khẩu phải trên 6 kí tự').max(25,'Mật khẩu không vượt quá 25 kí tự')
+        .matches(
+                /^(?=.*[A-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,}$/,
+                'Mật khẩu cần ít nhất 1 chữ hoa và 1 kí tự đặc biệt'
+            )
+        .required('Vui lòng nhập mật khẩu'),
     }),
 });
 const onSubmit = handleSubmit(async values => {

@@ -22,7 +22,7 @@
         <v-col cols="12" sm="4">
             <v-card variant="tonal" height="100%" class="ma-2">
                 <v-card-title class="text-center mt-4">
-                  <v-img src="../../assets/icon/palette.png" max-height="50" class="ma-2"></v-img>
+                  <v-img src="../../assets/icon/palette.png" height="50" class="ma-2"></v-img>
                 </v-card-title>
                 <v-card-text class="text-center font-weight-bold" style="font-size: 20px;">Customizable & Reusable</v-card-text>
                 <p class="text-center" style="font-size: 14px;">Take our UX patterns and rebuild</p>
@@ -39,7 +39,5 @@ name:'FooterView'
 </script>
 
 <style scoped>
-@media screen {
-  
-}
+
 </style>
